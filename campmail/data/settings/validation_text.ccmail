@@ -1,0 +1,3 @@
+<?php //DONT EDIT!!!
+$validation_text = "We received your subscription request, now we need the confirm that you really want to subscribe to our Mailing List.<br>To validate your subscription, just click here:<br><br>VALIDATION_LINK<br><br>No more emails will be sent to you until the account is validated.";
+?>

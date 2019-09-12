@@ -1,0 +1,8 @@
+<?php //DONT EDIT!!!
+$on_unsubscription = "You was unsubscribed from $company_name Mailing List!
+
+This mail has been sent to confirm your removal request: if you didn't want to unsubscribe, you can subscribe again here:
+$company_site/ccmail/index.php?address=[--ADDRESS--]
+
+If the problem persists, please advise us here: $company_email";
+?>

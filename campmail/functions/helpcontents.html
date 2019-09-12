@@ -1,0 +1,116 @@
+<!-- HELP (included in admin.php)-->
+<center>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td valign="top" width="80%"><div class="standard">
+<center><img border="0" width="40" height="40" src="images/help.gif" alt="Help">
+<br><b>CcMail Handbook</b></center><br>
+<ul><ol type="1">
+<lh><b>Contents</b></lh>
+<li><a class="link" href="#h1">What is CcMail?</a></li>
+<li><a class="link" href="#h2">What are the requirements to set up CcMail?</a></li>
+<li><a class="link" href="#h3">Can I use CcMail to send personal Mails over internet?</a></li>
+<li><a class="link" href="#h8">How can I include in my pages the User Interface displayed in the Main page?</a></li>
+<li><a class="link" href="#h15">How can change User Interface language?</a></li>
+<li><a class="link" href="#h14">How can I avoid fake subscribers?</a></li>
+<li><a class="link" href="#h9">How can I import users from my old Mailing List Manager?</a></li>
+<li><a class="link" href="#h4">How can I send a Mail?</a></li>
+<li><a class="link" href="#h5">How can I specify the Recipients of a Mail?</a></li>
+<li><a class="link" href="#h6">What are "Groups"?</a></li>
+<li><a class="link" href="#h10">What are " Hidden Groups"?</a></li>
+<li><a class="link" href="#h7">How can I manage Users and Groups?</a></li>
+<li><a class="link" href="#h11">Can I give someone the permissions to manage CcMail?</a></li>
+<li><a class="link" href="#h13">PHPMailer Settings</a></li>
+<li><a class="link" href="#h16">Scheduling</a></li>
+<li><a class="link" href="#h12">Common Issues</a></li>
+<li><a class="link" href="#h17">The Future of CcMail</a></li>
+</ol></ul><br><br>
+<ul><ol type="1">
+<li><a name="h1"><b><font color="red">What is CcMail?</font></b><br>CcMail is a powerful Mailing List Manager that doesn't require any PHP knowledge. It was designed to have a user-friendly interface, being in the same time complete and powerful.<br>
+CcMail offers the basic functionalities of a commercial, expensive script for free. Try to believe.<br><br>
+<i>At the moment CcMail is not designed to manage a large amount of subscribers (>5000), because of its no-database nature.<br>
+A MySQL version of CcMail, that will support unlimited subscribers, will be released once this version will be mature enough.</i><br><br>
+With CcMail you can:<ul>
+<li>Send Mails in both text/HTML, select attachments, edit, etc.</li>
+<li>Create information Groups, and manage them (delete, restore...)</li>
+<li>Manage Users, who can easily unsubscribe or modify the groups they were subscribed to</a></li>
+<li>Quickly select/insert recipients</li>
+<li>Many other things :-)...</li></ul></a></li><br><br>
+<li><a name="h2"><b><font color="red">What are the requirements to set up CcMail?</font></b><br>The requirements are very poor: you need only PHP>4.2 support! It means that virtually any server can successfully run CcMail.<br>Often, these programs need MySQL support: this is not the case.</a></li><br><br>
+<li><a name="h3"><b><font color="red">Can I use CcMail to send personal Mails over internet?</font></b><br>Of course! You need only to edit settings with your name (the sender) and your email (so that your recipients can reply), insert recipient(s) and mail body and it\'s done. You can attach files, edit a previous Mail, use HTML syntax and so on.<br>This could be very useful if you need to send a mail without having to configure a client: you just need an internet connection.</a></li><br><br>
+<li><a name="h8"><b><font color="red">How can I include in my pages the User Interface displayed in the Main page?</font></b><br>To include in your PHP pages the User Interface, just add the following line:<br><br><code>
+&lt;?php include "path_to_ccmail/include.php" ?&gt;</code><br><br>where <i>path_to_ccmail</i> is the path of your ccmail uploaded directory (the directory of this file). It should be simply "ccmail".</a></li><br><br>
+<li><a name="h15"><b><font color="red">How can change User Interface language?</font></b><br>You can change the language of your subscription form in "Settings". If your language is not included in your release, maybe you can find it here:<br>
+<a href="http://www.cicoandcico.com/download/download.php?SortBy=0&fdir=./ccmail/language%20packs/" class="link">http://www.cicoandcico.com/download/download.php?SortBy=0&fdir=./ccmail/language%20packs/</a>
+<br>If your language is not supported at the moment, you may create it: you can find some example in ccmail/lang folder. You have only to translate a file, and don't forget to advise me. I will include your language pack in the next releases of ccmail.</a></li><br><br>
+<li><a name="h14"><b><font color="red">How can I avoid fake subscribers?</font></b><br>
+There is the possibility to avoid fake address subscriptions. Subscribers will receive a validation email with a particular link (this email is, by default, sent as HTML); they have to click on that link in order to make their subscription effective.<br>To enable validation email, you have to select the appropriate box in "Settings" ans optionally fill in the "Validation Text" field.<br>If you want to modify the activation page change Subscription form url (see Settings).
+</i></a></li><br><br>
+<li><a name="h9"><b><font color="red">How can I import users from my old Mailing List Manager?</font></b><br>To import a list of Users, click on "import" and follow the instructions. You should be able to import users from a virtually any plain text file. However, if your list is not retrieved correctly, try to edit your file to match a simple list.<br>If your list is saved on a proprietary, or binary format, you have to add your users manually. Edit settings, first, not to send a notification mail to your users.</a></li><br><br>
+<li><a name="h4"><b><font color="red">How can I send a Mail?</font></b><br>Well, it's very simple. Just follow these steps:
+<ul>
+<li>Select Recipients (see following answer)</li>
+<li>Click on "Write Mail", and fill the fields with the subject and the body of your Mail. Don't worry if there are some mistakes: you will be able to modify it later. Click on "Proceed".</li>
+<li>You can see now a preview of the mail you've composed. As you can see, you can edit it, delete it and attach files.<br>
+Don't attach huge files (>50 Mb), because maximum file size depends on your server, so it can be only a waste of time. To attach a file, click on Attach -> Browse -> (select local file) -> Attach. If successfully uploaded, file name will be displayed under Mail subject.<br>
+If you look at the right of the Subject, there is a link called <font color="red"><b>[TEXT]</b></font>. It means you're displaying plain text preview: HTML tags are not active!<br>If you click on that, HTML preview will be displayed: if the body of the mail has some HTML tags like <code>&lt;hr&gt;</code>, you will see some differences :-)<br><b>Important:</b> <i>consider that plain text is generally safer, better and more compatible!</i><br>
+However, whatever you choose, you have to select you choice near "Send Mail as" button, and than click on it. <br>The Mail will be sent to all recipients and saved in Outbox for future use (you can retrieve it and paste to preview).</li></ul></a></li><br><br>
+<li><a name="h5"><b><font color="red">How can I specify the Recipients of a Mail?</font></b><br>You can see, in the right, a column named "Recipients". There are 4 possibilities:<br>
+<a class="link"><b>Add Users</b>:</a> displays all subscribed Users. You have to click on "Add" or "Remove" to, respectively, add the user to the list, or remove from it.</a><br>
+<a class="link"><b>Add Groups</b>:</a> displays all active Groups. Clicking on "Add" will add all the Users subscribed to that Group to the recipients. Clicking on remove will remove them. Too simple?</a><br>
+<a class="link"><b>Type Address</b>:</a> insert an e-mail address manually(or more than one). Valid addresses will be added.</a><br>
+<a class="link"><b>Add Everyone</b>:</a> add to recipients every subscribed users.</a></a></li><br><br>
+<li><a name="h6"><b><font color="red">What are "Groups"?</font></b><br>"Groups" means information Groups: the administrator (you) creates some Groups, to give Users the ability to choose what to receive informations about.<br>Suppose you've just created 3 Groups(CcMail, CcCounter and Site news).<br>When a User will subscribe, he will have to specify the Groups he wants to subscribe to. Suppose he wants to be notified about CcMail updates: he will subscribe to CcMail Group only.<br>When you will send a mail to the users of Group CcMail, that User will be authomatically added to recipients!<br>Of course, if you delete a Group, Users won't receive any more informations about it.</a></li><br><br>
+<li><a name="h10"><b><font color="red">What are "Hidden Groups"?</font></b><br>You can Hide/Unhide a certain Group to protect sensitive informations. When a Group is hidden, Users can't subscribe to it, but you can treat it like a normal Group.<br>To add Users to a hidden Group, you may unhide it, add users, then re-hide it.</a></li><br><br>
+<li><a name="h7"><b><font color="red">How can I manage Users and Groups?</font></b><br>You can delete/restore Users, and create/delete/restore Groups. That's very easy: watch at the left menu.<br>
+If you click on a User or a Group, you will receive informations about it.</a></li><br><br>
+<li><a name="h11"><b><font color="red">Can I give someone the permissions to manage CcMail?</font></b><br>Yes, CcMail allows multiple Administrators creation. Just edit config.php and add another user, giving him a unique username/password. He will have exactly your abilities, so pay attention!</a></li><br><br>
+<li><a name="h13"><b><font color="red">PhpMailer Settings</font></b><br> CcMail, from version RC3, uses PHPMailer to send mails. PHPMailer supports nearly all possibilities to send emails: <code>mail()</code>, sendmail (very popular in the *nix world) and SMTP-server directly.
+<br><br><b>mail()</b><br>PHP implements a function to send mail, but it's not recommended for doing mass mailing because it dramatically overloads the server. So, <i>you are not recommended to use that</i>, above all if you have a lot of subscribers!
+<br><br><b>Sendmail</b><br>
+Sendmail is probably the most widely-used UNIX Internet MTA(Mail Transfer Agent). If you have a Unix/Linux server, it probably supports it. If you have problems with SMTP, this is the right choice.
+<br><br><b>SMTP</b><br>
+SMTP is the recommended method, because it gives you the ability to designate as many SMTP servers you wish. To set up SMTP, you need only a valid email account (or more than one). Fields explanation:<ul>
+<li><i>Hostname</i>: Sets the SMTP hosts. All hosts must be separated by a semicolon. You can also specify a different port for each host by using this format: [hostname:port] (e.g. "smtp1.domain.com:25;smtp2.domain.com"). Hosts will be tried in order.</li>
+<li><i>PORT</i>: Sets the default SMTP server port. Leave default value if you don't know what it is.</li>
+<li><i>HELO</i>: Sets the SMTP HELO of the message. Leave default value if you don't know what it is.</li>
+<li><i>Authentication</i>: Many SMTP servers require authentication. You have to specify username and password.</li></ul><br>
+If you have problems with SMTP, don't worry: try <code>mail()</code> and sendmail to find what is good for you. If you have some problems, read the following section (Common issues).<br>
+</a></li><br><br>
+<li><a name="h16"><b><font color="red">Scheduling</font></b><br>Scheduling is a nice feature if you have a lot of subscribers.<br>CcMail supports a particular way to schedule mails since version 1.0.1, that allows to schedule mails without server scheduling. <i>I suggest you to read the following very carefully, if you intend to use this feature!</i><br>
+<br><b>What is scheduling?</b><br>Scheduling allows you to split recipients of a mail in more groups, in order to reduce mail server load. This can be very useful if your server does not accept a lot of emails in a small period of time.<br>
+Let's make an example: suppose your server accepts a maximum of 2000 mails per hour, and you want to send a mail to your 40000 subscribers.<br>With scheduling, you can tell CcMail to send that mail to 2000 subscribers every hour automatically, until all your 40000 users get emailed. You need only to schedule it.<br>
+<br><b>How to schedule a Mail</b><br>
+Scheduling a Mail is very simple. You have just to compose a new Mail, select some Recipient, as usual. When everything will be ready you will be asked to send that Mail. Select "Schedule" and follow the instructions. Please note that you won't be able to modify a Scheduled Mail, but only to delete it.<br><br>
+<b>Execute Scheduling</b><br>
+Scheduling is executed automatically when you open schedule.php (ccmail/ folder). You can:<ul>
+<li>Include that file in a frequently visited php page of your site. When a browser will open that page, Scheduled mail will be controlled and, if necessary, processed.
+<br>It is <i>extremely important</i> not to select a high number of Mails per period!<br>In fact, suppose you have selected 1000 Mails every 10 mins. When a browser opens the page, schedule could take a long time to be completed, and if page request is interrupted you can exeperience the problem of some User getting emailed twice or more!<br>
+So, a good choice is selecting a low ratio, like 5 Mails every 2 minutes, or using the following method.</li>
+<li>The most secure choice is opening auto_schedule.php (ccmail/ folder) with your browser. That page will automatically refresh every 2 mins, executing scheduling. So, let your browser always open and it will do all the work.<br>If you use this option, it is a good idea to rename auto_schedule.php so that no one but you can find and execute it.<br>
+This way, you can be quite sure that page request won't be interrupted, so that scheduling can employ more time. You can select, as an example, 100 (or more)users every 15 minutes.</li>
+</ul>
+</a></li><br><br>
+<li><a name="h12"><b><font color="red">Common Issues</font></b><br>If you have an issue, the first thing you should do is updating to the latest version. Your problem might have been already fixed.<br>
+<br><b>Permissions</b><br>CcMail doesn't need a database, so you can have problems with permissions. if you receive errors like: "Could not write file", or similar, try to chmod EVERYTHING inside data/ folder, and data/ folder itself, to 775 or 777 (try what it works for you).<br>
+If CHMOD is denied, gain root provileges or contact your administrator. It isn't due to CcMail!
+<br><br><b>I am using mail(), and some user is not emailed</b> -> Try Sendmail or SMTP
+<br><br><b>I am using SMTP, and I'm getting this kind of error: "SMTP Error: The following recipients failed [address]"</b><br>
+This error usually occours because relaying is not allowed on the SMTP server from the IP address of the web server. Go to the configuration of your SMTP server and turn relaying on for your IP address and try again.
+<br><br><b>I am using SMTP, and some user is not emailed</b><br>
+Some SMTP server, to avoid spam, limits the maximum number of sent mails per hour. For now, there are 2 solutions: use another SMTP server, or use more than one SMTP server to spread the sending load over several computers (see previous section).
+<br><br><b>I am using SMTP, and I'm getting a timeout message</b><br>
+This error usually occours in PHP versions  &gt;4.04. Upgrade your PHP release.
+
+<br><br>
+<li><a name="h17"><b><font color="red">The Future of CcMail</font></b><br>
+<b>MySQL</b><br>CcMail at the moment does not manage to support a lot of subscribers (>5000), so this will be the goal of next releases.<br>
+Besides, in the future I planned a MySQL version of CcMail, that will fix these problems. I don't know if I will continue to mantein this version when MySQL release will be ready... we'll see.<br>
+However, it will be released only when this version will be mature enough.<br><br>
+<b>New features</b><br>
+Probably, version 1.0.2 will enhance (and fix, since it is a new and complex feature)scheduling. A totally new feature will be templates support, even if they are yet implicitely supported (see Drafts). If you have some request, please let me know.<br>
+As regards HTML/Plain text choice when subscribing, I don't think it will be supported, because it is unseful, since HTML emails have a plain text version for those clients that don't support it.<br><br>
+<b>CcMail for free?</b><br>
+I don't think CcMail will have a payment version in the next future, but since someone told me that I should be fool (read: generous), it might be that a future MySQL version will have a small charge (~10-20$) for businesses, though remaining totally free for personal use and no-profit organisations.<be>
+Damn if it's difficult to speak english!
+</a></li><br><br>
+</ol></ul>
+</div></td></tr></table></center><br><br><br><br><br><br><br>

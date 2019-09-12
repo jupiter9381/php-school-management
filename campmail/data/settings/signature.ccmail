@@ -1,0 +1,8 @@
+<?php //DONT EDIT!!!
+$signature = "-------------------------------------------
+Powered by CcMail 1.0
+http://www.cicoandcico.com/products.php?option=ccmail
+
+Unsubscribe/Modify: 
+$subscription_form_url?address=[--ADDRESS--]";
+?>

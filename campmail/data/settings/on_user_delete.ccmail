@@ -1,0 +1,6 @@
+<?php //DONT EDIT!!!
+$on_user_delete = "You were removed from $company_name Mailing List.
+
+For any problem, please contact us here:
+$company_email";
+?>

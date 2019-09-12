@@ -1,0 +1,3 @@
+<?php //DONT EDIT!!!
+$on_group_delete = "Group $gr_name you was subscribed to in $company_name Mailing List was deleted by administrator, so you will not receive any more informations about it.";
+?>

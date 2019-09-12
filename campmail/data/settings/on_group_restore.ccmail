@@ -1,0 +1,3 @@
+<?php //DONT EDIT!!!
+$on_group_restore = "Group $gr_name you was subscribed to in $company_name Mailing List was restored by administrator, so you will receive informations about it again.";
+?>

@@ -1,0 +1,132 @@
+/*
+ * FCKeditor - The text editor for internet
+ * Copyright (C) 2003-2004 Frederico Caldeira Knabben
+ * 
+ * Licensed under the terms of the GNU Lesser General Public License:
+ * 		http://www.opensource.org/licenses/lgpl-license.php
+ * 
+ * For further information visit:
+ * 		http://www.fckeditor.net/
+ * 
+ * File Name: fck_dialog.css
+ * 	Styles used by the dialog boxes.
+ * 
+ * Version:  2.0 RC3
+ * Modified: 2005-02-10 13:10:27
+ * 
+ * File Authors:
+ * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
+ */
+
+body
+{
+	margin: 0px;
+	padding: 10px;
+}
+
+body, td, input, select, textarea
+{
+	font-size: 11px;
+	font-family: Verdana, Geneva, Arial, Helvetica, "Nimbus Sans L", sans-serif;
+}
+
+body, .BackColor
+{
+	background-image: url(images/background.png);
+}
+
+.PopupBody
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+.PopupTitle
+{
+	font-weight: bold;
+	font-size: 12px;
+	color: #C8311C;
+	background-image: url(images/menu_background.png);
+	padding: 3px 10px 3px 10px;
+}
+
+.PopupButtons
+{
+	border-top: #AAAAAA 1px solid;
+	background-image: url(images/menu_background.png);
+	padding: 7px 10px 7px 10px;
+}
+
+.Button
+{
+	border-right: #AAAAAA 1px solid;
+	border-top: #AAAAAA 1px solid;
+	border-left: #AAAAAA 1px solid;
+	color: #000000;
+	border-bottom: #AAAAAA 1px solid;
+	background-image : url(images/button.gif);
+}
+
+.DarkBackground
+{
+	background-image: url(images/menu_background.png);
+}
+
+.LightBackground
+{
+	background-image: url(images/background.png);
+}
+
+.PopupTitleBorder
+{
+	border-bottom: #AAAAAA 1px solid;
+}
+
+.PopupTabArea
+{
+	color: #595959;
+	background-image: url(images/menu_background.png);
+}
+
+.PopupTabEmptyArea
+{
+	padding-left: 10px ;
+	border-bottom: #AAAAAA 1px solid;
+}
+
+.PopupTab, .PopupTabSelected
+{
+	border-right: #AAAAAA 1px solid;
+	border-top: #AAAAAA 1px solid;
+	border-left: #AAAAAA 1px solid;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	color: #595959;
+}
+
+.PopupTab
+{
+	margin-top: 1px;
+	border-bottom: #AAAAAA 1px solid;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.PopupTabSelected
+{
+	font-weight:bold;
+	cursor: default;
+	padding-top: 4px;
+	border-bottom: #FFFFFF 1px solid;
+	background-image: url(images/background.png);
+}
+
+.PopupSelectionBox
+{
+	border: #ff9933 1px solid;
+	background-color: #fffacd;
+	cursor: pointer;
+	cursor: hand;
+}

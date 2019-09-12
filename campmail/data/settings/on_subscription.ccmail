@@ -1,0 +1,8 @@
+<?php //DONT EDIT!!!
+$on_subscription = "You was subscribed to $company_name Mailing List!
+
+This mail has been sent to confirm your subscription: if you didn't want to subscribe, you can unsubscribe or modify your subscription here:
+$company_site/ccmail/index.php?address=[--ADDRESS--]
+
+If the problem persists, please advise us here: $company_email";
+?>

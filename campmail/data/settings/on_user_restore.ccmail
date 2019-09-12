@@ -1,0 +1,8 @@
+<?php //DONT EDIT!!!
+$on_user_restore = "You were restored in $company_name Mailing List.
+You can modify your account here:
+$company_site/ccmail/index.php?address=[--ADDRESS--]
+
+For any problem, please contact us here:
+$company_email";
+?>

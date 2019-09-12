@@ -1,0 +1,3 @@
+<?php //DONT EDIT!!!
+$smtp_host = "smtp.email.com";
+?>

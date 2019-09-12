@@ -1,0 +1,8 @@
+<?php //DONT EDIT!!!
+$on_group_created = "$company_name Mailing List created a new information Group, called $gr_name. 
+If you want to receive informations about it, you can modify your account here:
+$company_site/ccmail/index.php?address=[--ADDRESS--]
+
+For any problem, please contact us here:
+$company_email";
+?>
