@@ -1,19 +1,24 @@
 <?php
 
-if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=="127.0.0.1" || $_SERVER['HTTP_HOST']=="192.168.0.104" || $_SERVER['HTTP_HOST']=="192.168.1.1"){
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "school-management";
-    $baseurl = "http://local.school.com/";
-}
-else{    
-    $servername = "srv2";
-    $username = "rascamp_prueba";
-    $password = "12345678";
-    $dbname = "rascamp_school_management";
-    $baseurl = "http://rascamp.com/admin/";
-}
+// if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=="127.0.0.1" || $_SERVER['HTTP_HOST']=="192.168.0.104" || $_SERVER['HTTP_HOST']=="192.168.1.1"){
+//     $servername = "localhost";
+//     $username = "root";
+//     $password = "";
+//     $dbname = "school-management";
+//     $baseurl = "http://local.school.com/";
+// }
+// else{    
+//     $servername = "srv2";
+//     $username = "rascamp_prueba";
+//     $password = "12345678";
+//     $dbname = "rascamp_school_management";
+//     $baseurl = "http://rascamp.com/admin/";
+// }
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "school-management";
+$baseurl = "http://local.school.com/";
 // Create connection
 $db = new mysqli($servername, $username, $password, $dbname);
 // Check connection
