@@ -88,53 +88,59 @@ if(isset($_POST["type"]) && $_POST["type"]== 'AddUser')
     $date=date('Y-m-d H:i:s');    
     if($id=='')
     {   
-        $userc=mysqli_num_rows(mysqli_query($db,"select uid from users where username='$email'"));
-        $emailc=mysqli_num_rows(mysqli_query($db,"select uid from users where email='$email'"));
-        if($emailc>0)
-        {
-            $msg = "Email-id is already register";
-        }
-         else if($userc>0)
-        {
-            $msg = "Username is already taken";
-        } /* else if (preg_match('/[^a-z_\-0-9]/i', $username)) {
-            $msg = "Username should contain only character,number or underscore";
-        } */
-        else
-        {
-            //$password = random_password(8);
-            $permission_id = 3;
-            $password = $_POST['password'];
-            $e_password = encrypt_password($password);
-            $qry="INSERT INTO `users`(`permission_id`, `first_name`, `last_name`, `email`, `username`,`password`, `created`) VALUES ('$permission_id','$first_name','$last_name','$email','$email','$e_password','$date')";
-            $q1=mysqli_query($db,$qry);
-            if($q1) 
-            {
-               $loginurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";           
-                $loginurl = str_replace("includes/adminfunction.php",'admin',$loginurl);
-                $to = $email;
-                $from = "";
-                $subject = "$webtitle - Account Has Been Created";
-                $body="
-                    <b style='text-transform:capitalize;'>Dear $first_name $last_name, </b>
-                    <br>
-                    <p> Your Account Has Been Created .</p>
-                    <p> Username : $email</p>
-                    <p> Password : $password </p>
-                    <p> Please <a href='$loginurl'> click here to login </a></p>
-                    <br>
-                    <p>Thank You</p>
-                    <img alt=\"$webname\" border=\"0\" width=\"250\" style=\"display:block\"  src=\"cid:logo_2u\"><br>
-                ";
-                
-                send_phpmail( $first_name." ".$last_name, $to ,"", "" , $subject, $body  );
-                $success = true;                
-                $msg= "$email Register successfully";
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirm_password'];
+        if($password != $confirm_password) {
+            $msg = "Password and Confirm password are not same.";
+        } else  {
+            $userc=mysqli_num_rows(mysqli_query($db,"select uid from users where username='$email'"));
+            $emailc=mysqli_num_rows(mysqli_query($db,"select uid from users where email='$email'"));
+
+            if($emailc>0){
+                $msg = "Email-id is already register";
             }
-            else{
-                $msg= "Some Promlem Occur try after sometime";
-            }   
+             else if($userc>0)
+            {
+                $msg = "Username is already taken";
+            } /* else if (preg_match('/[^a-z_\-0-9]/i', $username)) {
+                $msg = "Username should contain only character,number or underscore";
+            } */
+            else
+            {
+                //$password = random_password(8);
+                $permission_id = 3;
+                $e_password = encrypt_password($password);
+                $qry="INSERT INTO `users`(`permission_id`, `first_name`, `last_name`, `email`, `username`,`password`, `created`) VALUES ('$permission_id','$first_name','$last_name','$email','$email','$e_password','$date')";
+                $q1=mysqli_query($db,$qry);
+                if($q1) 
+                {
+                   $loginurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";           
+                    $loginurl = str_replace("includes/adminfunction.php",'admin',$loginurl);
+                    $to = $email;
+                    $from = "";
+                    $subject = "$webtitle - Account Has Been Created";
+                    $body="
+                        <b style='text-transform:capitalize;'>Dear $first_name $last_name, </b>
+                        <br>
+                        <p> Your Account Has Been Created .</p>
+                        <p> Username : $email</p>
+                        <p> Password : $password </p>
+                        <p> Please <a href='$loginurl'> click here to login </a></p>
+                        <br>
+                        <p>Thank You</p>
+                        <img alt=\"$webname\" border=\"0\" width=\"250\" style=\"display:block\"  src=\"cid:logo_2u\"><br>
+                    ";
+                    
+                    send_phpmail( $first_name." ".$last_name, $to ,"", "" , $subject, $body  );
+                    $success = true;                
+                    $msg= "$email Register successfully";
+                }
+                else{
+                    $msg= "Some Promlem Occur try after sometime";
+                }   
+            }
         }
+        
 
         
                 

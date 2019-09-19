@@ -86,12 +86,16 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 						<div class="row">
 							<div class="col-md-12">
 								<label class="input">
-									<input type="text" id="password" name="password" placeholder="Password"  required="required" >
+									<i class="icon-append fa fa-check"></i>
+									<input type="password" id="password" name="password" placeholder="Password"  required="required" >
+									<b class="tooltip tooltip-bottom-right">Password</b>
 								</label>
 							</div>
 							<div class="col col-md-12">
 								<label class="input">
-									<input type="text" id="confirm_password" name="confirm_password" placeholder="Confirm_password"  required="required" >
+									<i class="icon-append fa fa-check"></i>
+									<input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm_password"  required="required" >
+									<b class="tooltip tooltip-bottom-right">Confirm Password</b>
 								</label>
 							</div>
 						</div>
