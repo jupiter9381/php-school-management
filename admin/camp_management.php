@@ -64,7 +64,8 @@
                                     <?php if(permission_access($db,$per_id,'camp_management_delete')==1){ ?>
                                     <a class="btn btn-xs btn-danger Deletecampmanagement  " href="javascript:void(0);" title="Delete Camp Management  " data-id="<?php echo $r1['camp_management_id']; ?>"><i class="fa fa-trash"> </i></a>
                                     &nbsp;
-                                    <?php }?>                                    
+                                    <?php }?>   
+                                    <a class="btn btn-xs btn-info" href="export_camp_management.php?id=<?php echo $r1['camp_management_id'];?>" ><i class="fa fa-clone"></i></a>                                 
                                 </td>
                             </tr>
                             <?php }?>
