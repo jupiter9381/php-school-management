@@ -103,6 +103,7 @@ if(isset($_POST["type"]) && $_POST["type"]== 'AddUser')
         else
         {
             //$password = random_password(8);
+            $permission_id = 3;
             $password = $_POST['password'];
             $e_password = encrypt_password($password);
             $qry="INSERT INTO `users`(`permission_id`, `first_name`, `last_name`, `email`, `username`,`password`, `created`) VALUES ('$permission_id','$first_name','$last_name','$email','$email','$e_password','$date')";
@@ -154,7 +155,7 @@ if(isset($_POST["type"]) && $_POST["type"]== 'AddUser')
         
     }
             
-     echo json_encode(array(
+    echo json_encode(array(
         'valid'=>$success,
         'url'=>$url,
         'msg'=>$msg

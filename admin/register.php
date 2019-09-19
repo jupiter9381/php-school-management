@@ -81,10 +81,22 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 							<input type="text" id="email" name="email" placeholder="Email Address"  required="required">
 							<b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
 						</label>
-					
-						
 					</fieldset>
-                           
+                    <fieldset>
+						<div class="row">
+							<div class="col-md-12">
+								<label class="input">
+									<input type="text" id="password" name="password" placeholder="Password"  required="required" >
+								</label>
+							</div>
+							<div class="col col-md-12">
+								<label class="input">
+									<input type="text" id="confirm_password" name="confirm_password" placeholder="Confirm_password"  required="required" >
+								</label>
+							</div>
+						</div>
+					</fieldset>
+
 					<footer>
                         <input type ="hidden" name = "txtid" id="txtid" value="<?php echo isset($data['uid'])?$data['uid']:'';?>">
 						<input type ="hidden" name = "type" value="AddUser">
