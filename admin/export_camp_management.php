@@ -25,6 +25,9 @@
 		$student_name = $res['student_name'];
 		$gender = $res['gender'];
 		$dob = $res['dob'];
+		$nationality = $res['nationality'];
+		$grade = $res['grade'];
+		
 		var_dump($dob);
 		/*$objPHPExcel->getActiveSheet()->setCellValue('A'.$row, $no);
 		$objPHPExcel->getActiveSheet()->setCellValue('B'.$row, $student_name );
