@@ -3419,43 +3419,82 @@ $("#formclassaddcampmanagement").submit(function(e)
 
 /***********************Delete Equipment Assignment**************************/
 
-$("body").on('click', '.Deletecampmanagement', function()
+// $("body").on('click', '.Deletecampmanagement', function()
+// {
+//     //alert('');
+//     var id = $(this).attr("data-id");
+//     $elm = $(this);
+//     $elm.hide();
+//     $elm.after('<i class="fa fa-spinner fa-pulse fa-1x fa-fw submit-loading"></i>');
+//     $.ajax({
+//         type : 'POST',
+//         url : "../includes/adminfunction.php",
+//         data :  {
+//             id : id,
+//             type : "Deletecampmanagement"
+//         },
+//         success : function(data)
+//         {
+//             $(".submit-loading").remove();
+//             $elm.show();
+//             var data = jQuery.parseJSON(data);
+//             if(data.valid)
+//             {
+//                 _toastr(data.message,"bottom-right","success",false);
+//                 setTimeout(function(){
+//                     location.reload();
+//                 }, 3000);
+//                 return false;
+//             }
+//             else
+//             {
+//                 _toastr(data.message,"bottom-right","info",false);
+//                 return false;
+//             }
+//             return false;
+//         }
+//     });
+
+// });
+
+$("body").on('dblclick', '.Deletecampmanagement', function()
 {
-    //alert('');
-    var id = $(this).attr("data-id");
-    $elm = $(this);
-    $elm.hide();
-    $elm.after('<i class="fa fa-spinner fa-pulse fa-1x fa-fw submit-loading"></i>');
-    $.ajax({
-        type : 'POST',
-        url : "../includes/adminfunction.php",
-        data :  {
-            id : id,
-            type : "Deletecampmanagement"
-        },
-        success : function(data)
-        {
-            $(".submit-loading").remove();
-            $elm.show();
-            var data = jQuery.parseJSON(data);
-            if(data.valid)
-            {
-                _toastr(data.message,"bottom-right","success",false);
-                setTimeout(function(){
-                    location.reload();
-                }, 3000);
-                return false;
-            }
-            else
-            {
-                _toastr(data.message,"bottom-right","info",false);
-                return false;
-            }
-            return false;
-        }
-    });
+    alert('');
+    // var id = $(this).attr("data-id");
+    // $elm = $(this);
+    // $elm.hide();
+    // $elm.after('<i class="fa fa-spinner fa-pulse fa-1x fa-fw submit-loading"></i>');
+    // $.ajax({
+    //     type : 'POST',
+    //     url : "../includes/adminfunction.php",
+    //     data :  {
+    //         id : id,
+    //         type : "Deletecampmanagement"
+    //     },
+    //     success : function(data)
+    //     {
+    //         $(".submit-loading").remove();
+    //         $elm.show();
+    //         var data = jQuery.parseJSON(data);
+    //         if(data.valid)
+    //         {
+    //             _toastr(data.message,"bottom-right","success",false);
+    //             setTimeout(function(){
+    //                 location.reload();
+    //             }, 3000);
+    //             return false;
+    //         }
+    //         else
+    //         {
+    //             _toastr(data.message,"bottom-right","info",false);
+    //             return false;
+    //         }
+    //         return false;
+    //     }
+    // });
 
 });
+
 
 /*------------------------- Add Curriculum Overview ------------------------*/
 
